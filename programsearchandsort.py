@@ -19,3 +19,19 @@ node8 = customlinkedlist("-4")
 node9 = customlinkedlist("0")
 node10 = customlinkedlist("3")
 
+node1.nextnode = node2
+node2.nextnode = node3
+node3.nextnode = node4
+node4.nextnode = node5
+node5.nextnode = node6
+node6.nextnode = node7
+node7.nextnode = node8
+node9.nextnode = node10
+
+def linear_search(customlinkedlist, look_for):
+    for i, value in enumerate(customlinkedlist):
+        if value == look_for:
+            return i
+        return -1
+index = linear_search(customlinkedlist, 8)
+print("The value {} is at index {}".format(8,index))
