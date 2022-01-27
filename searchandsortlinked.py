@@ -7,6 +7,7 @@ class Nodes:
 class linkedList:
     def __init__(self):
         self.head = None
+      
     
     def insert(self, value):
         node = customLikedList(value)

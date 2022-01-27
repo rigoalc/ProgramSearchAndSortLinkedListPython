@@ -3,7 +3,7 @@
 # Advanced Python Programming
 # 01/25/2022
 
-class customlinkedlist:
+class CustomLinkedList:
     def __init__(self, value, nextnode=None):
         self.value = value
         self.nextnode = nextnode
