@@ -1,23 +1,20 @@
-class Node:
+class Node:#Singly Linked List
     def __init__(self, data, next=None):
         self.data = data
-        self.next = next
+        self.next = next#Next item in the list
         
-    def traverse(self):
-        print("{} -> ".format(self.data),end='')
-        if self.next:
-            self.next.traverse()
-        else:
-            print('NULL')
-def traverse_linked_list(node):
-    if not node:
-        print('NULL')
-        return
-    print("{} -> ".format(node.data), end='')
-    traverse_linked_list(node.next)
+            
+def linear_search(node, look_for):
+    while node:
+        
+        node = look_for
+        node(node.next)
+        
     
-            
-            
+        if not node:
+            break
+                   
+    
 node1 = Node("1")
 node2 = Node("7")
 node3 = Node("4")
@@ -39,11 +36,9 @@ node7.nextnode = node8
 node9.nextnode = node10
 
 
-traverse_linked_list(node1) 
-node1.traverse()           
+
+           
             
-traverse_linked_list(node2) 
-node2.traverse()
 
             
         
