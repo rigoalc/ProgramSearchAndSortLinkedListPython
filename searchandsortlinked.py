@@ -42,6 +42,8 @@ node9.nextnode = node10
 traverse_linked_list(node1) 
 node1.traverse()           
             
+traverse_linked_list(node2) 
+node2.traverse()
 
             
         
