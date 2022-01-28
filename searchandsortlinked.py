@@ -9,6 +9,13 @@ class Node:
             self.next.traverse()
         else:
             print('NULL')
+def traverse_linked_list(node):
+    if not node:
+        print('NULL')
+        return
+    print("{} -> ".format(node.data), end='')
+    traverse_linked_list(node.next)
+    
             
             
 node1 = Node("1")
@@ -32,9 +39,10 @@ node7.nextnode = node8
 node9.nextnode = node10
 
 
-traverse(node1) 
+traverse_linked_list(node1) 
 node1.traverse()           
             
+
             
         
 
