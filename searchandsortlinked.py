@@ -6,13 +6,16 @@
 '''Design: How will you solve the problem? I will solve the problem by writing a program that uses a 
 linked list for a linear search, binary search and an insertion sort. 
 This program will also count the number of steps it takes to complete each action.
+
 Develop: What did you actually do to solve the problem? I solved the problem by creating a linked list 
 then using that list to run a linear search, a binary search and a selection sort. The program also counts how 
 many steps it takes to complete each and prints the count at the end.
+
 Test: What did you test? I tested the midway function assert the midway of 3 three nodes and asserting the results.
 Document: Explain your code for your future self and others. This program preforms a linear search, 
 binary search and a selection sort on a linked list. At the bottom you can change the data in the nodes and also 
 which node to search for or start with for the selection sort.
+
 How to use the program: Open the program. You can change the data values for the nodes a the bottom to use different data. 
 If you do change the values then you will also want to change the ‘main’ program where it says linear_search and binary_search 
 to match the node you are looking for. Hit Run, the program will then print the number of steps it took to complete the searches and sort.
