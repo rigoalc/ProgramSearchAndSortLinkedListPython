@@ -1,5 +1,6 @@
-class Node:#Singly Linked List
-    def __init__(self, data, prev=None, next=None):
+class Node:#Class to define Nodes
+   
+    def __init__(self, data, prev=None, next=None):#Function for define variables
         self.data = data
         self.next = next#Next item in the list
         self.prev = prev#Prev item in the list
@@ -7,7 +8,7 @@ class Node:#Singly Linked List
     def __str__(self):
         return "{}".format(self.data)
 
-def traverse_linked_list(node):
+def traverse_linked_list(node):#Function to traverse the list 
     """Print out nodes recursively"""
     if not node: # Base Case
         print('NULL') # Adds newline
@@ -17,7 +18,7 @@ def traverse_linked_list(node):
     traverse_linked_list(node.next)
         
             
-def linear_search(node, look_for):
+def linear_search(node, look_for):#Function for linear search in the linked list
     iteration = 0
     while node:
         if node.data == look_for:
@@ -27,9 +28,8 @@ def linear_search(node, look_for):
         node = node.next
         iteration += 1
     print("Not Found")
-        
-        
-def insertion_sort(node):
+    
+def insertion_sort(node):#Function for insertion sort
     iteration = 0
     marker_a = node.next   
     while marker_a:
@@ -41,21 +41,20 @@ def insertion_sort(node):
             iteration += 1
         marker_b.data = unsorted_value
         marker_a = marker_a.next
-    
-    
-    #print sort of array 
     head = node
     while head.prev:
         head = head.prev
     traverse_linked_list(head)
     print("This took:", iteration,"steps.")
-        
-        
-               
+    
+def binary_search(node, look_for):
+        marker_a = 0
+        marker_b = marker_a
+        iteration = 0
+        while  marker_b < marker_b.next.data:
+            marker_b = marker_a
                 
-    
-                   
-    
+               
 node1 = Node("1")
 node2 = Node("7")
 node3 = Node("4")
@@ -87,8 +86,7 @@ node8.prev = node7
 node9.prev = node8
 node10.prev = node9
 
-linear_search(node1, "8")
-insertion_sort(node1)
+
 
 
            
