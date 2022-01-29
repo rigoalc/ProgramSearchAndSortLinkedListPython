@@ -1,0 +1,7 @@
+# Each line can specify the types of files to ignore:
+
+# Ignore the .venv folder
+.venv/
+
+# Ignore all files that end in .pyc
+*.pyc

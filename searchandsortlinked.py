@@ -19,7 +19,8 @@ def traverse_linked_list(node):#Function to traverse the list
         
             
 def linear_search(node, look_for):#Function for linear search in the linked list
-    iteration = 0
+    ''' O(n)'''
+    iteration = 0 
     while node:
         if node.data == look_for:
             print(node.data)
@@ -30,6 +31,7 @@ def linear_search(node, look_for):#Function for linear search in the linked list
     print("Not Found")
     
 def insertion_sort(node):#Function for insertion sort
+    '''O(n^2)'''
     iteration = 0
     marker_a = node.next   
     while marker_a:
@@ -50,6 +52,7 @@ def insertion_sort(node):#Function for insertion sort
 
     
 def binary_search(node, look_for):
+    '''O(log N)'''
     count = 0
     start = node
     end = node
@@ -81,6 +84,9 @@ def find_midway(start, end):
     for x in range(midway):
         start = start.next
     return start
+    
+
+
 
                 
                
@@ -116,10 +122,13 @@ node9.prev = node8
 node10.prev = node9
 
 #find_midway(node1, node5)
-linear_search(node1, 8)
-head = insertion_sort(node1)
-found = binary_search(head, 8)
-print("We have found:", found)
+if __name__ == '__main__':
+     
+    linear_search(node1, 8)
+    head = insertion_sort(node1)
+    found = binary_search(head, 8)
+    print("We have found:", found)
+
 
 
 
