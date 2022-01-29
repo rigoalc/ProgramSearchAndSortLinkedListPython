@@ -1,20 +1,39 @@
+# Kim Bottomley & Rodrigo Alcover
+# Program Search and Sort due 1/29/2022
+# CIS 226-23199 Advanced Python Programming
+# 20hrs
+
+'''Design: How will you solve the problem? I will solve the problem by writing a program that uses a 
+linked list for a linear search, binary search and an insertion sort. 
+This program will also count the number of steps it takes to complete each action.
+Develop: What did you actually do to solve the problem? I solved the problem by creating a linked list 
+then using that list to run a linear search, a binary search and a selection sort. The program also counts how 
+many steps it takes to complete each and prints the count at the end.
+Test: What did you test? I tested the midway function assert the midway of 3 three nodes and asserting the results.
+Document: Explain your code for your future self and others. This program preforms a linear search, 
+binary search and a selection sort on a linked list. At the bottom you can change the data in the nodes and also 
+which node to search for or start with for the selection sort.
+How to use the program: Open the program. You can change the data values for the nodes a the bottom to use different data. 
+If you do change the values then you will also want to change the ‘main’ program where it says linear_search and binary_search 
+to match the node you are looking for. Hit Run, the program will then print the number of steps it took to complete the searches and sort.
+'''
+
 class Node:#Class to define Nodes
    
     def __init__(self, data, prev=None, next=None):#Function for define variables
         self.data = data
-        self.next = next#Next item in the list
-        self.prev = prev#Prev item in the list
+        self.next = next
+        self.prev = prev
         
     def __str__(self):
         return "{}".format(self.data)
 
 def traverse_linked_list(node):#Function to traverse the list 
     """Print out nodes recursively"""
-    if not node: # Base Case
-        print('NULL') # Adds newline
+    if not node: 
+        print('NULL') 
         return
     print("{} -> ".format(node.data), end='') # Set end='' to not do newline
-    # Do next node
     traverse_linked_list(node.next)
         
             
@@ -51,7 +70,7 @@ def insertion_sort(node):#Function for insertion sort
     return head
 
     
-def binary_search(node, look_for):
+def binary_search(node, look_for):#Function for perform binary search
     '''O(log N)'''
     count = 0
     start = node
@@ -73,7 +92,7 @@ def binary_search(node, look_for):
     return found
 
 
-def find_midway(start, end):
+def find_midway(start, end):#Function for find the midway of the list
     count = 0
     node = start
     while node != end:
@@ -84,12 +103,7 @@ def find_midway(start, end):
     for x in range(midway):
         start = start.next
     return start
-    
-
-
-
-                
-               
+                  
 node1 = Node(1)
 node2 = Node(7)
 node3 = Node(4)
@@ -124,10 +138,10 @@ node10.prev = node9
 #find_midway(node1, node5)
 if __name__ == '__main__':
      
-    linear_search(node1, 8)
-    head = insertion_sort(node1)
-    found = binary_search(head, 8)
-    print("We have found:", found)
+    linear_search(node1, 8)#call linear search function
+    head = insertion_sort(node1)#call the intertion sort function
+    found = binary_search(head, 8)#call the binary search function
+    
 
 
 
