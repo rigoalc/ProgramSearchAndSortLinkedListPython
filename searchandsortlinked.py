@@ -46,25 +46,50 @@ def insertion_sort(node):#Function for insertion sort
         head = head.prev
     traverse_linked_list(head)
     print("This took:", iteration,"steps.")
+    return head
+
     
 def binary_search(node, look_for):
-        marker_a = 0
-        marker_b = marker_a
-        iteration = 0
-        while  marker_b < marker_b.next.data:
-            marker_b = marker_a
+    start = node
+    end = node
+    while end.next:
+        end = end.next
+    found = None
+    while found is None and start != end.next:
+        midway = find_midway(start, end)
+        if midway.data == look_for:
+            found = midway
+        elif midway.data < look_for:
+            start = midway.next
+        else:
+            end = midway.prev
+    return found
+
+
+def find_midway(start, end):
+    count = 0
+    node = start
+    while node != end:
+        node = node.next
+        count += 1
+    print(count)
+    midway = int(count/2)
+    for x in range(midway):
+        start = start.next
+    return start
+
                 
                
-node1 = Node("1")
-node2 = Node("7")
-node3 = Node("4")
-node4 = Node("2")
-node5 = Node("9")
-node6 = Node("8")
-node7 = Node("10")
-node8 = Node("-4")
-node9 = Node("0")
-node10 = Node("3")
+node1 = Node(1)
+node2 = Node(7)
+node3 = Node(4)
+node4 = Node(2)
+node5 = Node(9)
+node6 = Node(8)
+node7 = Node(10)
+node8 = Node(-4)
+node9 = Node(0)
+node10 = Node(3)
 
 node1.next = node2
 node2.next = node3
@@ -86,6 +111,10 @@ node8.prev = node7
 node9.prev = node8
 node10.prev = node9
 
+#find_midway(node1, node5)
+head = insertion_sort(node1)
+found = binary_search(head, 8)
+print("We have found:", found)
 
 
 
