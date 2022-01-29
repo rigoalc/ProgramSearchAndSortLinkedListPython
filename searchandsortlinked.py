@@ -23,7 +23,7 @@ def linear_search(node, look_for):#Function for linear search in the linked list
     while node:
         if node.data == look_for:
             print(node.data)
-            print("This took:", iteration,"steps.")
+            print("This took:", iteration,"steps to perform linear search.")
             return
         node = node.next
         iteration += 1
@@ -45,11 +45,12 @@ def insertion_sort(node):#Function for insertion sort
     while head.prev:
         head = head.prev
     traverse_linked_list(head)
-    print("This took:", iteration,"steps.")
+    print("This took:", iteration,"steps to perform insertion sort.")
     return head
 
     
 def binary_search(node, look_for):
+    count = 0
     start = node
     end = node
     while end.next:
@@ -63,6 +64,9 @@ def binary_search(node, look_for):
             start = midway.next
         else:
             end = midway.prev
+        count += 1
+    print ("This took:", count,"steps to perform binary search.")
+    
     return found
 
 
@@ -112,6 +116,7 @@ node9.prev = node8
 node10.prev = node9
 
 #find_midway(node1, node5)
+linear_search(node1, 8)
 head = insertion_sort(node1)
 found = binary_search(head, 8)
 print("We have found:", found)
